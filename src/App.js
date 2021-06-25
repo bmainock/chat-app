@@ -7,6 +7,7 @@ import "firebase/auth";
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
+//if/else keeps app from trying to reinitalize
 if (!firebase.apps.length) {
   firebase.initializeApp({
     apiKey: "AIzaSyCo5_aVYDiYALcyOvpeWnaPMU4S3DS00Tg",
@@ -18,6 +19,7 @@ if (!firebase.apps.length) {
     measurementId: "G-9DN40W8WDC",
   });
 }
+
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 
@@ -58,12 +60,11 @@ function ChatRoom() {
   //constant reminder to uppercase react hooks
   const autoScrolly = useRef();
   const messagesRef = firestore.collection("messages");
-  const query = messagesRef.orderBy("createdAt").limit(60);
+  const query = messagesRef.orderBy("createdAt").limit(60); //limit the amount of chars for messages
 
   const [messages] = useCollectionData(query, { idField: "id" });
-
   const [formValue, setFormValue] = useState("");
-  //async function
+  //async function arrow function
   const sendMessage = async (currentlyChatting) => {
     currentlyChatting.preventDefault();
 
@@ -77,6 +78,9 @@ function ChatRoom() {
     });
 
     setFormValue("");
+    {
+      /*resets text box back to empty*/
+    }
 
     autoScrolly.current.scrollIntoView({ behavior: "smooth" });
   };
@@ -104,7 +108,6 @@ function ChatRoom() {
 
 function ChatMessage(props) {
   const { text, uid, photoURL } = props.message;
-
   const messageClass = uid === auth.currentUser.iud ? "sent" : "received";
 
   return (

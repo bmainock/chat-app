@@ -1,9 +1,13 @@
+/*
+eventually to use material instead of css
+*/
+
 body {
-  background-color: #282c34;
+  background-color: #041e52;
 }
 
 .App {
-  text-align: center;
+  text-align: left;
   max-width: 728px;
   margin: 0 auto;
 }
@@ -20,7 +24,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 99;
+  z-index: 100;
   padding: 10px;
   box-sizing: border-box;
 }
@@ -30,12 +34,13 @@ body {
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  background-color: rgb(40, 37, 53);
+  background-color: rgb(28, 25, 39);
+  border-radius: 8px;
 }
 
 main {
   padding: 10px;
-  height: 80vh;
+  height: 90vh;
   margin: 10vh 0 10vh;
   overflow-y: scroll;
   display: flex;
@@ -51,14 +56,14 @@ main::-webkit-scrollbar-track {
 }
 
 main::-webkit-scrollbar-thumb {
-  background: #6649b8;
+  background: #7e798d;
 }
 
 form {
   height: 10vh;
   position: fixed;
   bottom: 0;
-  background-color: rgb(24, 23, 23);
+  background-color: rgb(10, 7, 88);
   width: 100%;
   max-width: 728px;
   display: flex;
@@ -66,8 +71,8 @@ form {
 }
 
 form button {
-  width: 20%;
-  background-color: rgb(56, 56, 143);
+  width: 40%;
+  background-color: rgb(5, 70, 3);
 }
 
 input {
@@ -82,7 +87,7 @@ input {
 }
 
 button {
-  background-color: #282c34; /* Green */
+  background-color: #282c34;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -91,6 +96,7 @@ button {
   display: inline-block;
   cursor: pointer;
   font-size: 1.25rem;
+  border-radius: 8px;
 }
 
 button:disabled {
@@ -101,7 +107,7 @@ button:disabled {
 .sign-in {
   color: #282c34;
   background: white;
-  max-width: 400px;
+  max-width: 200px;
   margin: 0 auto;
 }
 
@@ -112,14 +118,15 @@ li {
 }
 
 p {
-  max-width: 500px;
+  max-width: 400px;
   margin-bottom: 12px;
-  line-height: 24px;
-  padding: 10px 20px;
+  line-height: 10px;
+  padding: 10px 10px;
   border-radius: 25px;
   position: relative;
   color: white;
   text-align: center;
+  font-weight: bold;
 }
 
 .message {
